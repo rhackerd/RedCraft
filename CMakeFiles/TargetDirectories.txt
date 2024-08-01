@@ -1,0 +1,3 @@
+/home/rhacker/Dokumenty/RedCraft/CMakeFiles/RedCraft.dir
+/home/rhacker/Dokumenty/RedCraft/CMakeFiles/edit_cache.dir
+/home/rhacker/Dokumenty/RedCraft/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/RedCraft.dir/src/Game.cpp.o CMakeFiles/RedCraft.dir/src/Voxelium.cpp.o CMakeFiles/RedCraft.dir/src/gui.cpp.o CMakeFiles/RedCraft.dir/src/logging.cpp.o CMakeFiles/RedCraft.dir/src/main.cpp.o CMakeFiles/RedCraft.dir/src/menu.cpp.o CMakeFiles/RedCraft.dir/src/settings.cpp.o -o RedCraft  /usr/lib/libraylib.so -lglm -L/usr/lib -lraylib
