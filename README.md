@@ -13,3 +13,4 @@ To build RedCraft, you need to have the following dependencies installed:
 Once you have all the dependencies installed, you can build RedCraft by running the following commands:
 
 
+g

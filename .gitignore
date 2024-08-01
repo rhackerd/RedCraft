@@ -34,10 +34,8 @@ test/
 test/test.out
 
 RedCraft
-
-CMakeFiles
-.cache
-*.cmake
 CMakeCache.txt
-compile_commands.json
 
+/CMakeFiles
+CMakeFiles
+/.cache
