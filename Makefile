@@ -177,6 +177,30 @@ src/Voxelium.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/Voxelium.cpp.s
 .PHONY : src/Voxelium.cpp.s
 
+src/gameCreator.o: src/gameCreator.cpp.o
+.PHONY : src/gameCreator.o
+
+# target to build an object file
+src/gameCreator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gameCreator.cpp.o
+.PHONY : src/gameCreator.cpp.o
+
+src/gameCreator.i: src/gameCreator.cpp.i
+.PHONY : src/gameCreator.i
+
+# target to preprocess a source file
+src/gameCreator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gameCreator.cpp.i
+.PHONY : src/gameCreator.cpp.i
+
+src/gameCreator.s: src/gameCreator.cpp.s
+.PHONY : src/gameCreator.s
+
+# target to generate assembly for a file
+src/gameCreator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gameCreator.cpp.s
+.PHONY : src/gameCreator.cpp.s
+
 src/gui.o: src/gui.cpp.o
 .PHONY : src/gui.o
 
@@ -297,6 +321,30 @@ src/menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/menu.cpp.s
 .PHONY : src/menu.cpp.s
 
+src/perlinNoise.o: src/perlinNoise.cpp.o
+.PHONY : src/perlinNoise.o
+
+# target to build an object file
+src/perlinNoise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/perlinNoise.cpp.o
+.PHONY : src/perlinNoise.cpp.o
+
+src/perlinNoise.i: src/perlinNoise.cpp.i
+.PHONY : src/perlinNoise.i
+
+# target to preprocess a source file
+src/perlinNoise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/perlinNoise.cpp.i
+.PHONY : src/perlinNoise.cpp.i
+
+src/perlinNoise.s: src/perlinNoise.cpp.s
+.PHONY : src/perlinNoise.s
+
+# target to generate assembly for a file
+src/perlinNoise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/perlinNoise.cpp.s
+.PHONY : src/perlinNoise.cpp.s
+
 src/settings.o: src/settings.cpp.o
 .PHONY : src/settings.o
 
@@ -336,6 +384,9 @@ help:
 	@echo "... src/Voxelium.o"
 	@echo "... src/Voxelium.i"
 	@echo "... src/Voxelium.s"
+	@echo "... src/gameCreator.o"
+	@echo "... src/gameCreator.i"
+	@echo "... src/gameCreator.s"
 	@echo "... src/gui.o"
 	@echo "... src/gui.i"
 	@echo "... src/gui.s"
@@ -351,6 +402,9 @@ help:
 	@echo "... src/menu.o"
 	@echo "... src/menu.i"
 	@echo "... src/menu.s"
+	@echo "... src/perlinNoise.o"
+	@echo "... src/perlinNoise.i"
+	@echo "... src/perlinNoise.s"
 	@echo "... src/settings.o"
 	@echo "... src/settings.i"
 	@echo "... src/settings.s"

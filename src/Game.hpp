@@ -9,6 +9,8 @@
 #include "Voxelium.hpp"
 #include "settings.hpp"
 #include "loading.hpp"
+#include "gameCreator.hpp"
+
 
 class Game {
 public:
@@ -27,6 +29,7 @@ private:
     Voxelium voxelium;  // Add Voxelium instance
     Settings settings;
     Loading loading;
+    GameCreator creator;
 };
 
 #endif // GAME_HPP

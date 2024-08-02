@@ -12,7 +12,11 @@ public:
     void init();
     void update();
     void draw();
-    void drawVoxel();
+    void genChunk(int x, int y);
+    void delBlock(int x, int y);
+    void changeBlock(int x, int y);
+    void setBlock(int x, int y);
+    
 
 private:
     int width;

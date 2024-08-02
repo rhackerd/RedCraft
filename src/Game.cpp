@@ -5,7 +5,7 @@
 
 Game::Game() 
     : gameState(0), width(800), height(600), 
-      menu(width, height), voxelium(), settings(), loading() {  // Initialize Voxelium instance
+      menu(width, height), voxelium(), settings(), loading(), creator() {  // Initialize Voxelium instance
 }
 
 Game::~Game() {
@@ -44,6 +44,9 @@ void Game::run() {
             // Handle menu events
             menu.handleEvents();
         }else if(gameState == 2) {
+            gameState += creator.next();
+            creator.Draw();
+        }else if(gameState == 3) {
             voxelium.draw();
         }
 

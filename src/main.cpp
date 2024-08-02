@@ -5,7 +5,6 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
-
 #include "Voxelium.hpp"
 #include "logging.hpp"
 #include "Game.hpp"

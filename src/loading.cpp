@@ -12,12 +12,19 @@ Loading::~Loading() {}
 void Loading::draw() {
     ClearBackground(BLACK);
     DrawText("RedCraft", (GetScreenWidth()-MeasureText("RedCraft", 40))/2, 50, 40, WHITE);
-    DrawText("Loading...", 200, 250, 20, WHITE);
-    DrawText(std::to_string(progress).c_str(), 200, 300, 20, WHITE);
+    DrawText("Loading...", 10, GetScreenHeight() - 60, 20, WHITE);
+    DrawRectangle(0, GetScreenHeight() - 30, GetScreenWidth(), 30, GRAY);
+    DrawRectangle(0, GetScreenHeight() - 30, GetScreenWidth() * progress / 100, 30, RED);
+    std::string progressStr = std::to_string(progress) + "%"; 
+    int out = (GetScreenWidth() * progress / 100)-MeasureText(progressStr.c_str(), 20)-10;
+    if (out < 0) {
+        out = 0;
+    }
+    DrawText(progressStr.c_str(), out, GetScreenHeight() - 25, 20, WHITE);
 }
 
 int Loading::next() {
-    //progress++;
+    progress++;
     if (progress > 100) {
         return 1;
     }
