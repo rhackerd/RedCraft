@@ -7,6 +7,8 @@
 #include <raylib.h>
 #include "menu.hpp"
 #include "Voxelium.hpp"
+#include "settings.hpp"
+#include "loading.hpp"
 
 class Game {
 public:
@@ -14,13 +16,17 @@ public:
     ~Game();
     void run();
     void init();
+    void debug(bool debug);
 
 private:
     int gameState;
     int width;
+    bool debugging;
     int height;
     Menu menu;
     Voxelium voxelium;  // Add Voxelium instance
+    Settings settings;
+    Loading loading;
 };
 
 #endif // GAME_HPP
