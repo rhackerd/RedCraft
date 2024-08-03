@@ -9,30 +9,41 @@ public:
     int x, y;
     int id;
     Color color;
-    Color originalColor;  // Store the original color
+    Color originalColor;
     bool isHovered;
     bool isClicked;
     bool isDisabled;
     bool hasGui;
-    int durability;  // Changed from bool to int. If durability is 0, block is unbreakable
+    int durability;  // If durability is 0, block is unbreakable
     int offsetX;
     int offsetY;
+    int blockSize;
+    Texture2D texture;
 
     Voxel(int x, int y, Color color = {10, 10, 10, 255}) 
-        : x(x), y(y), id(0), color(color), originalColor(color), isHovered(false), isClicked(false), isDisabled(false), hasGui(false), durability(0), offsetX(0), offsetY(0) {}
+        : x(x), y(y), id(0), color(color), originalColor(color), isHovered(false), isClicked(false), isDisabled(false), hasGui(false), durability(0), offsetX(0), offsetY(0), blockSize(50) {}
 
     virtual ~Voxel() = default;
 
-    virtual void Draw() const {
-        DrawRectangle(x+offsetX, y+offsetY, 50, 50, color);  // Assuming default size is 50x50
+virtual void Draw() const {
+    if (texture.id != 0) {
+        Rectangle sourceRec = {0, 0, (float)texture.width, (float)texture.height};  // Source rectangle (texture size)
+        Rectangle destRec = {static_cast<float>((x * blockSize) + offsetX), static_cast<float>((y * blockSize) + offsetY), static_cast<float>(blockSize), static_cast<float>(blockSize)}; // Destination rectangle (where to draw)
+        Vector2 origin = {0, 0}; // Rotation origin
+
+        // Draw the texture
+        DrawTexturePro(texture, sourceRec, destRec, origin, 0.0f, color);  // No rotation and tint color is white
+    } else {
+        // Draw a rectangle if texture is not set
+        DrawRectangle((x * blockSize) + offsetX, (y * blockSize) + offsetY, blockSize, blockSize, color);
     }
+}
+
 
     virtual void onClick() {
-        // Implement click behavior here
     }
 
     virtual void onHover() {
-        // Implement hover behavior here
     }
 
     virtual void Update() {
@@ -50,25 +61,27 @@ private:
 
     void HandleHovering() {
         Vector2 mousePos = GetMousePosition();
-        Rectangle blockRect = { static_cast<float>(x)+offsetX, static_cast<float>(y)+offsetY, 50, 50 };  // Assuming default size is 50x50
+        Rectangle blockRect = { static_cast<float>(x*blockSize)+offsetX, static_cast<float>(y*blockSize)+offsetY, 50, 50 };
         
-        // Check if the mouse is hovering over the block
+
         bool currentlyHovered = CheckCollisionPointRec(mousePos, blockRect);
 
-        // Adjust color to be a bit darker when hovered
-        if (currentlyHovered) {
-            // Darken the color by reducing the RGB values
-            color.r = std::max(originalColor.r - 30, 0);  // Ensure value does not go below 0
-            color.g = std::max(originalColor.g - 30, 0);  // Ensure value does not go below 0
-            color.b = std::max(originalColor.b - 30, 0);  // Ensure value does not go below 0
 
-            // Call onHover() only when the voxel is hovered for the first time
+        if (currentlyHovered) {
+
+            color.r = std::max(originalColor.r - 30, 0);
+            color.g = std::max(originalColor.g - 30, 0);
+            color.b = std::max(originalColor.b - 30, 0);
+            this->isHovered = true;
+
+
             if (!wasHoveredLastFrame) {
                 onHover();
             }
         } else {
-            // Reset to the original color
+
             color = originalColor;
+            this->isHovered = false;
         }
 
         wasHoveredLastFrame = currentlyHovered;
@@ -76,11 +89,9 @@ private:
 
     void HandleClicking() {
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-            Vector2 mousePos = GetMousePosition();
-            Rectangle blockRect = { static_cast<float>(x), static_cast<float>(y), 50, 50 };  // Assuming default size is 50x50
             
-            // Check if the mouse click is within the bounds of the block
-            if (CheckCollisionPointRec(mousePos, blockRect)) {
+
+            if (this->isHovered) {
                 onClick();
             }
         }

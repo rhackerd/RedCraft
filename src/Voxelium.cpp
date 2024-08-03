@@ -19,7 +19,8 @@ Voxelium::~Voxelium() {}
 void Voxelium::init() {
     //InitWindow(width, height, "Voxelium");
     //SetTargetFPS(60);
-    blocks.emplace_back(std::make_shared<Grass>(10,10));
+    blocks.emplace_back(std::make_shared<Grass>(0,0));
+    blocks.emplace_back(std::make_shared<Grass>(1,0));
 
 }
 
