@@ -9,7 +9,8 @@
 #include "logging.hpp"
 #include "Game.hpp"
 #include <stdio.h>
-#define DEBUG true
+#include <SDL2/SDL.h>
+#define DEBUG false
 using namespace std;
 
 void CustomLog(int msgType, const char *text, va_list args)
@@ -29,7 +30,10 @@ void CustomLog(int msgType, const char *text, va_list args)
 }
 
 int main() {
-
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+        cerr << "Failed to initialize SDL: " << SDL_GetError() << endl;
+        return 1;
+    }
     SetTraceLogCallback(CustomLog);
 
     info("Welcome to redcraft!");

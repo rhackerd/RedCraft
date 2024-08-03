@@ -225,6 +225,30 @@ src/gui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui.cpp.s
 .PHONY : src/gui.cpp.s
 
+src/inventory.o: src/inventory.cpp.o
+.PHONY : src/inventory.o
+
+# target to build an object file
+src/inventory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/inventory.cpp.o
+.PHONY : src/inventory.cpp.o
+
+src/inventory.i: src/inventory.cpp.i
+.PHONY : src/inventory.i
+
+# target to preprocess a source file
+src/inventory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/inventory.cpp.i
+.PHONY : src/inventory.cpp.i
+
+src/inventory.s: src/inventory.cpp.s
+.PHONY : src/inventory.s
+
+# target to generate assembly for a file
+src/inventory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/inventory.cpp.s
+.PHONY : src/inventory.cpp.s
+
 src/loading.o: src/loading.cpp.o
 .PHONY : src/loading.o
 
@@ -390,6 +414,9 @@ help:
 	@echo "... src/gui.o"
 	@echo "... src/gui.i"
 	@echo "... src/gui.s"
+	@echo "... src/inventory.o"
+	@echo "... src/inventory.i"
+	@echo "... src/inventory.s"
 	@echo "... src/loading.o"
 	@echo "... src/loading.i"
 	@echo "... src/loading.s"

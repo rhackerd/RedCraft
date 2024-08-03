@@ -3,14 +3,13 @@
 
 #include "logging.hpp"
 #include <string>
-#include <fstream>
 #include <raylib.h>
 #include "menu.hpp"
 #include "Voxelium.hpp"
 #include "settings.hpp"
 #include "loading.hpp"
 #include "gameCreator.hpp"
-
+#include "inventory.hpp"
 
 class Game {
 public:
@@ -21,15 +20,21 @@ public:
     void debug(bool debug);
 
 private:
+    void update();
+    void render();
+    void handleGameState();
+
     int gameState;
     int width;
-    bool debugging;
     int height;
+    bool debugging;
+
     Menu menu;
-    Voxelium voxelium;  // Add Voxelium instance
+    Voxelium voxelium;
     Settings settings;
     Loading loading;
     GameCreator creator;
+    Inventory inventory;
 };
 
 #endif // GAME_HPP

@@ -13,6 +13,7 @@ find_package(SDL2 REQUIRED)
 
 # Add source files
 file(GLOB SOURCE src/*.cpp)
+file(GLOB BLOCKS src/assets/*.cpp)
 
 # Define the executable
 add_executable(${PROJECT_NAME} ${SOURCE})
