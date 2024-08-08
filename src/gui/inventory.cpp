@@ -1,11 +1,11 @@
-#include "logging.hpp"
-#include "inventory.hpp"
+#include "../utils/logging.hpp"
+#include "../gui/inventory.hpp"
 #include <raylib.h>
 
 // info(); for output
 
 Inventory::Inventory() {
-    invSize = 2;
+    invSize = 6;
     selected = 0;
     items = std::vector<std::pair<Item, std::pair<int, int>>>();
 }
@@ -45,11 +45,27 @@ void Inventory::draw() {
 }
 
 void Inventory::update() {
-    // Check for raylib input instead of SDL events
-    if (IsKeyPressed(KEY_ONE)) {
+    // Check for raylib input
+    if (IsKeyPressed(KEY_ONE) || IsKeyPressed(KEY_ONE)) {
         selected = 0;
-    } else if (IsKeyPressed(KEY_TWO)) {
+    } else if (IsKeyPressed(KEY_TWO) || IsKeyPressed(KEY_TWO)) {
         selected = 1;
+    } else if (IsKeyPressed(KEY_THREE) || IsKeyPressed(KEY_THREE)) {
+        selected = 2;
+    } else if (IsKeyPressed(KEY_FOUR) || IsKeyPressed(KEY_FOUR)) {
+        selected = 3;
+    } else if (IsKeyPressed(KEY_FIVE) || IsKeyPressed(KEY_FIVE)) {
+        selected = 4;
+    } else if (IsKeyPressed(KEY_SIX) || IsKeyPressed(KEY_SIX)) {
+        selected = 5;
+    } else if (IsKeyPressed(KEY_SEVEN) || IsKeyPressed(KEY_SIX)) {
+        selected = 6;
+    } else if (IsKeyPressed(KEY_EIGHT) || IsKeyPressed(KEY_SEVEN)) {
+        selected = 7;
+    } else if (IsKeyPressed(KEY_NINE) || IsKeyPressed(KEY_EIGHT)) {
+        selected = 8;
+    } else if (IsKeyPressed(KEY_ZERO) || IsKeyPressed(KEY_NINE)) {
+        selected = 9;
     } else if (IsKeyPressed(KEY_LEFT)) {
         if (selected > 0) {
             selected--;
@@ -91,7 +107,14 @@ void Inventory::update() {
             selected++;
         }
     }
+    if (selected > invSize - 1) {
+        selected = invSize - 1;
+    }
+    if (selected < 0) {
+        selected = 0;
+    }
 }
+
 
 Item Inventory::getSelectedItem() {
     return items[selected].first;

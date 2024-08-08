@@ -129,173 +129,197 @@ RedCraft/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/build
 .PHONY : RedCraft/fast
 
-src/Game.o: src/Game.cpp.o
-.PHONY : src/Game.o
+src/core/Game.o: src/core/Game.cpp.o
+.PHONY : src/core/Game.o
 
 # target to build an object file
-src/Game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/Game.cpp.o
-.PHONY : src/Game.cpp.o
+src/core/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/Game.cpp.o
+.PHONY : src/core/Game.cpp.o
 
-src/Game.i: src/Game.cpp.i
-.PHONY : src/Game.i
+src/core/Game.i: src/core/Game.cpp.i
+.PHONY : src/core/Game.i
 
 # target to preprocess a source file
-src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/Game.cpp.i
-.PHONY : src/Game.cpp.i
+src/core/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/Game.cpp.i
+.PHONY : src/core/Game.cpp.i
 
-src/Game.s: src/Game.cpp.s
-.PHONY : src/Game.s
+src/core/Game.s: src/core/Game.cpp.s
+.PHONY : src/core/Game.s
 
 # target to generate assembly for a file
-src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/Game.cpp.s
-.PHONY : src/Game.cpp.s
+src/core/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/Game.cpp.s
+.PHONY : src/core/Game.cpp.s
 
-src/Voxelium.o: src/Voxelium.cpp.o
-.PHONY : src/Voxelium.o
+src/core/Voxelium.o: src/core/Voxelium.cpp.o
+.PHONY : src/core/Voxelium.o
 
 # target to build an object file
-src/Voxelium.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/Voxelium.cpp.o
-.PHONY : src/Voxelium.cpp.o
+src/core/Voxelium.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/Voxelium.cpp.o
+.PHONY : src/core/Voxelium.cpp.o
 
-src/Voxelium.i: src/Voxelium.cpp.i
-.PHONY : src/Voxelium.i
+src/core/Voxelium.i: src/core/Voxelium.cpp.i
+.PHONY : src/core/Voxelium.i
 
 # target to preprocess a source file
-src/Voxelium.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/Voxelium.cpp.i
-.PHONY : src/Voxelium.cpp.i
+src/core/Voxelium.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/Voxelium.cpp.i
+.PHONY : src/core/Voxelium.cpp.i
 
-src/Voxelium.s: src/Voxelium.cpp.s
-.PHONY : src/Voxelium.s
+src/core/Voxelium.s: src/core/Voxelium.cpp.s
+.PHONY : src/core/Voxelium.s
 
 # target to generate assembly for a file
-src/Voxelium.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/Voxelium.cpp.s
-.PHONY : src/Voxelium.cpp.s
+src/core/Voxelium.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/Voxelium.cpp.s
+.PHONY : src/core/Voxelium.cpp.s
 
-src/gameCreator.o: src/gameCreator.cpp.o
-.PHONY : src/gameCreator.o
+src/core/gameCreator.o: src/core/gameCreator.cpp.o
+.PHONY : src/core/gameCreator.o
 
 # target to build an object file
-src/gameCreator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gameCreator.cpp.o
-.PHONY : src/gameCreator.cpp.o
+src/core/gameCreator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/gameCreator.cpp.o
+.PHONY : src/core/gameCreator.cpp.o
 
-src/gameCreator.i: src/gameCreator.cpp.i
-.PHONY : src/gameCreator.i
+src/core/gameCreator.i: src/core/gameCreator.cpp.i
+.PHONY : src/core/gameCreator.i
 
 # target to preprocess a source file
-src/gameCreator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gameCreator.cpp.i
-.PHONY : src/gameCreator.cpp.i
+src/core/gameCreator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/gameCreator.cpp.i
+.PHONY : src/core/gameCreator.cpp.i
 
-src/gameCreator.s: src/gameCreator.cpp.s
-.PHONY : src/gameCreator.s
+src/core/gameCreator.s: src/core/gameCreator.cpp.s
+.PHONY : src/core/gameCreator.s
 
 # target to generate assembly for a file
-src/gameCreator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gameCreator.cpp.s
-.PHONY : src/gameCreator.cpp.s
+src/core/gameCreator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/gameCreator.cpp.s
+.PHONY : src/core/gameCreator.cpp.s
 
-src/gui.o: src/gui.cpp.o
-.PHONY : src/gui.o
+src/core/worldGen.o: src/core/worldGen.cpp.o
+.PHONY : src/core/worldGen.o
 
 # target to build an object file
-src/gui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui.cpp.o
-.PHONY : src/gui.cpp.o
+src/core/worldGen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/worldGen.cpp.o
+.PHONY : src/core/worldGen.cpp.o
 
-src/gui.i: src/gui.cpp.i
-.PHONY : src/gui.i
+src/core/worldGen.i: src/core/worldGen.cpp.i
+.PHONY : src/core/worldGen.i
 
 # target to preprocess a source file
-src/gui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui.cpp.i
-.PHONY : src/gui.cpp.i
+src/core/worldGen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/worldGen.cpp.i
+.PHONY : src/core/worldGen.cpp.i
 
-src/gui.s: src/gui.cpp.s
-.PHONY : src/gui.s
+src/core/worldGen.s: src/core/worldGen.cpp.s
+.PHONY : src/core/worldGen.s
 
 # target to generate assembly for a file
-src/gui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui.cpp.s
-.PHONY : src/gui.cpp.s
+src/core/worldGen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/worldGen.cpp.s
+.PHONY : src/core/worldGen.cpp.s
 
-src/inventory.o: src/inventory.cpp.o
-.PHONY : src/inventory.o
+src/gui/gui.o: src/gui/gui.cpp.o
+.PHONY : src/gui/gui.o
 
 # target to build an object file
-src/inventory.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/inventory.cpp.o
-.PHONY : src/inventory.cpp.o
+src/gui/gui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/gui.cpp.o
+.PHONY : src/gui/gui.cpp.o
 
-src/inventory.i: src/inventory.cpp.i
-.PHONY : src/inventory.i
+src/gui/gui.i: src/gui/gui.cpp.i
+.PHONY : src/gui/gui.i
 
 # target to preprocess a source file
-src/inventory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/inventory.cpp.i
-.PHONY : src/inventory.cpp.i
+src/gui/gui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/gui.cpp.i
+.PHONY : src/gui/gui.cpp.i
 
-src/inventory.s: src/inventory.cpp.s
-.PHONY : src/inventory.s
+src/gui/gui.s: src/gui/gui.cpp.s
+.PHONY : src/gui/gui.s
 
 # target to generate assembly for a file
-src/inventory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/inventory.cpp.s
-.PHONY : src/inventory.cpp.s
+src/gui/gui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/gui.cpp.s
+.PHONY : src/gui/gui.cpp.s
 
-src/loading.o: src/loading.cpp.o
-.PHONY : src/loading.o
+src/gui/inventory.o: src/gui/inventory.cpp.o
+.PHONY : src/gui/inventory.o
 
 # target to build an object file
-src/loading.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/loading.cpp.o
-.PHONY : src/loading.cpp.o
+src/gui/inventory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/inventory.cpp.o
+.PHONY : src/gui/inventory.cpp.o
 
-src/loading.i: src/loading.cpp.i
-.PHONY : src/loading.i
+src/gui/inventory.i: src/gui/inventory.cpp.i
+.PHONY : src/gui/inventory.i
 
 # target to preprocess a source file
-src/loading.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/loading.cpp.i
-.PHONY : src/loading.cpp.i
+src/gui/inventory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/inventory.cpp.i
+.PHONY : src/gui/inventory.cpp.i
 
-src/loading.s: src/loading.cpp.s
-.PHONY : src/loading.s
+src/gui/inventory.s: src/gui/inventory.cpp.s
+.PHONY : src/gui/inventory.s
 
 # target to generate assembly for a file
-src/loading.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/loading.cpp.s
-.PHONY : src/loading.cpp.s
+src/gui/inventory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/inventory.cpp.s
+.PHONY : src/gui/inventory.cpp.s
 
-src/logging.o: src/logging.cpp.o
-.PHONY : src/logging.o
+src/gui/loading.o: src/gui/loading.cpp.o
+.PHONY : src/gui/loading.o
 
 # target to build an object file
-src/logging.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/logging.cpp.o
-.PHONY : src/logging.cpp.o
+src/gui/loading.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/loading.cpp.o
+.PHONY : src/gui/loading.cpp.o
 
-src/logging.i: src/logging.cpp.i
-.PHONY : src/logging.i
+src/gui/loading.i: src/gui/loading.cpp.i
+.PHONY : src/gui/loading.i
 
 # target to preprocess a source file
-src/logging.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/logging.cpp.i
-.PHONY : src/logging.cpp.i
+src/gui/loading.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/loading.cpp.i
+.PHONY : src/gui/loading.cpp.i
 
-src/logging.s: src/logging.cpp.s
-.PHONY : src/logging.s
+src/gui/loading.s: src/gui/loading.cpp.s
+.PHONY : src/gui/loading.s
 
 # target to generate assembly for a file
-src/logging.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/logging.cpp.s
-.PHONY : src/logging.cpp.s
+src/gui/loading.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/loading.cpp.s
+.PHONY : src/gui/loading.cpp.s
+
+src/gui/menu.o: src/gui/menu.cpp.o
+.PHONY : src/gui/menu.o
+
+# target to build an object file
+src/gui/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/menu.cpp.o
+.PHONY : src/gui/menu.cpp.o
+
+src/gui/menu.i: src/gui/menu.cpp.i
+.PHONY : src/gui/menu.i
+
+# target to preprocess a source file
+src/gui/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/menu.cpp.i
+.PHONY : src/gui/menu.cpp.i
+
+src/gui/menu.s: src/gui/menu.cpp.s
+.PHONY : src/gui/menu.s
+
+# target to generate assembly for a file
+src/gui/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/menu.cpp.s
+.PHONY : src/gui/menu.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -321,77 +345,125 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/menu.o: src/menu.cpp.o
-.PHONY : src/menu.o
+src/resources/textures.o: src/resources/textures.cpp.o
+.PHONY : src/resources/textures.o
 
 # target to build an object file
-src/menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/menu.cpp.o
-.PHONY : src/menu.cpp.o
+src/resources/textures.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/resources/textures.cpp.o
+.PHONY : src/resources/textures.cpp.o
 
-src/menu.i: src/menu.cpp.i
-.PHONY : src/menu.i
+src/resources/textures.i: src/resources/textures.cpp.i
+.PHONY : src/resources/textures.i
 
 # target to preprocess a source file
-src/menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/menu.cpp.i
-.PHONY : src/menu.cpp.i
+src/resources/textures.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/resources/textures.cpp.i
+.PHONY : src/resources/textures.cpp.i
 
-src/menu.s: src/menu.cpp.s
-.PHONY : src/menu.s
+src/resources/textures.s: src/resources/textures.cpp.s
+.PHONY : src/resources/textures.s
 
 # target to generate assembly for a file
-src/menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/menu.cpp.s
-.PHONY : src/menu.cpp.s
+src/resources/textures.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/resources/textures.cpp.s
+.PHONY : src/resources/textures.cpp.s
 
-src/settings.o: src/settings.cpp.o
-.PHONY : src/settings.o
+src/utils/client.o: src/utils/client.cpp.o
+.PHONY : src/utils/client.o
 
 # target to build an object file
-src/settings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/settings.cpp.o
-.PHONY : src/settings.cpp.o
+src/utils/client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/client.cpp.o
+.PHONY : src/utils/client.cpp.o
 
-src/settings.i: src/settings.cpp.i
-.PHONY : src/settings.i
+src/utils/client.i: src/utils/client.cpp.i
+.PHONY : src/utils/client.i
 
 # target to preprocess a source file
-src/settings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/settings.cpp.i
-.PHONY : src/settings.cpp.i
+src/utils/client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/client.cpp.i
+.PHONY : src/utils/client.cpp.i
 
-src/settings.s: src/settings.cpp.s
-.PHONY : src/settings.s
+src/utils/client.s: src/utils/client.cpp.s
+.PHONY : src/utils/client.s
 
 # target to generate assembly for a file
-src/settings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/settings.cpp.s
-.PHONY : src/settings.cpp.s
+src/utils/client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/client.cpp.s
+.PHONY : src/utils/client.cpp.s
 
-src/worldGen.o: src/worldGen.cpp.o
-.PHONY : src/worldGen.o
+src/utils/discord.o: src/utils/discord.cpp.o
+.PHONY : src/utils/discord.o
 
 # target to build an object file
-src/worldGen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/worldGen.cpp.o
-.PHONY : src/worldGen.cpp.o
+src/utils/discord.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/discord.cpp.o
+.PHONY : src/utils/discord.cpp.o
 
-src/worldGen.i: src/worldGen.cpp.i
-.PHONY : src/worldGen.i
+src/utils/discord.i: src/utils/discord.cpp.i
+.PHONY : src/utils/discord.i
 
 # target to preprocess a source file
-src/worldGen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/worldGen.cpp.i
-.PHONY : src/worldGen.cpp.i
+src/utils/discord.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/discord.cpp.i
+.PHONY : src/utils/discord.cpp.i
 
-src/worldGen.s: src/worldGen.cpp.s
-.PHONY : src/worldGen.s
+src/utils/discord.s: src/utils/discord.cpp.s
+.PHONY : src/utils/discord.s
 
 # target to generate assembly for a file
-src/worldGen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/worldGen.cpp.s
-.PHONY : src/worldGen.cpp.s
+src/utils/discord.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/discord.cpp.s
+.PHONY : src/utils/discord.cpp.s
+
+src/utils/logging.o: src/utils/logging.cpp.o
+.PHONY : src/utils/logging.o
+
+# target to build an object file
+src/utils/logging.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/logging.cpp.o
+.PHONY : src/utils/logging.cpp.o
+
+src/utils/logging.i: src/utils/logging.cpp.i
+.PHONY : src/utils/logging.i
+
+# target to preprocess a source file
+src/utils/logging.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/logging.cpp.i
+.PHONY : src/utils/logging.cpp.i
+
+src/utils/logging.s: src/utils/logging.cpp.s
+.PHONY : src/utils/logging.s
+
+# target to generate assembly for a file
+src/utils/logging.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/logging.cpp.s
+.PHONY : src/utils/logging.cpp.s
+
+src/utils/settings.o: src/utils/settings.cpp.o
+.PHONY : src/utils/settings.o
+
+# target to build an object file
+src/utils/settings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/settings.cpp.o
+.PHONY : src/utils/settings.cpp.o
+
+src/utils/settings.i: src/utils/settings.cpp.i
+.PHONY : src/utils/settings.i
+
+# target to preprocess a source file
+src/utils/settings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/settings.cpp.i
+.PHONY : src/utils/settings.cpp.i
+
+src/utils/settings.s: src/utils/settings.cpp.s
+.PHONY : src/utils/settings.s
+
+# target to generate assembly for a file
+src/utils/settings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/utils/settings.cpp.s
+.PHONY : src/utils/settings.cpp.s
 
 # Help Target
 help:
@@ -402,39 +474,48 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... RedCraft"
-	@echo "... src/Game.o"
-	@echo "... src/Game.i"
-	@echo "... src/Game.s"
-	@echo "... src/Voxelium.o"
-	@echo "... src/Voxelium.i"
-	@echo "... src/Voxelium.s"
-	@echo "... src/gameCreator.o"
-	@echo "... src/gameCreator.i"
-	@echo "... src/gameCreator.s"
-	@echo "... src/gui.o"
-	@echo "... src/gui.i"
-	@echo "... src/gui.s"
-	@echo "... src/inventory.o"
-	@echo "... src/inventory.i"
-	@echo "... src/inventory.s"
-	@echo "... src/loading.o"
-	@echo "... src/loading.i"
-	@echo "... src/loading.s"
-	@echo "... src/logging.o"
-	@echo "... src/logging.i"
-	@echo "... src/logging.s"
+	@echo "... src/core/Game.o"
+	@echo "... src/core/Game.i"
+	@echo "... src/core/Game.s"
+	@echo "... src/core/Voxelium.o"
+	@echo "... src/core/Voxelium.i"
+	@echo "... src/core/Voxelium.s"
+	@echo "... src/core/gameCreator.o"
+	@echo "... src/core/gameCreator.i"
+	@echo "... src/core/gameCreator.s"
+	@echo "... src/core/worldGen.o"
+	@echo "... src/core/worldGen.i"
+	@echo "... src/core/worldGen.s"
+	@echo "... src/gui/gui.o"
+	@echo "... src/gui/gui.i"
+	@echo "... src/gui/gui.s"
+	@echo "... src/gui/inventory.o"
+	@echo "... src/gui/inventory.i"
+	@echo "... src/gui/inventory.s"
+	@echo "... src/gui/loading.o"
+	@echo "... src/gui/loading.i"
+	@echo "... src/gui/loading.s"
+	@echo "... src/gui/menu.o"
+	@echo "... src/gui/menu.i"
+	@echo "... src/gui/menu.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/menu.o"
-	@echo "... src/menu.i"
-	@echo "... src/menu.s"
-	@echo "... src/settings.o"
-	@echo "... src/settings.i"
-	@echo "... src/settings.s"
-	@echo "... src/worldGen.o"
-	@echo "... src/worldGen.i"
-	@echo "... src/worldGen.s"
+	@echo "... src/resources/textures.o"
+	@echo "... src/resources/textures.i"
+	@echo "... src/resources/textures.s"
+	@echo "... src/utils/client.o"
+	@echo "... src/utils/client.i"
+	@echo "... src/utils/client.s"
+	@echo "... src/utils/discord.o"
+	@echo "... src/utils/discord.i"
+	@echo "... src/utils/discord.s"
+	@echo "... src/utils/logging.o"
+	@echo "... src/utils/logging.i"
+	@echo "... src/utils/logging.s"
+	@echo "... src/utils/settings.o"
+	@echo "... src/utils/settings.i"
+	@echo "... src/utils/settings.s"
 .PHONY : help
 
 

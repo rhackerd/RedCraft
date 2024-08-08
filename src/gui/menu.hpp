@@ -1,7 +1,7 @@
 #ifndef MENU_HPP
 #define MENU_HPP
 
-#include "gui.hpp"
+#include "../gui/gui.hpp"
 #include <raylib.h>
 
 class Menu {

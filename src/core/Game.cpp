@@ -1,10 +1,10 @@
-#include "Game.hpp"
-#include "gui.hpp"
+#include "../core/Game.hpp"
+#include "../gui/gui.hpp"
 #include <raylib.h>
 
 Game::Game()
     : gameState(0), width(800), height(600),
-      menu(width, height), voxelium(), settings(), loading(), creator(), debugging(false), inventory() {
+      menu(width, height), voxelium(), settings(), loading(), creator(), debugging(false), inventory(), discord() {
 }
 
 Game::~Game() {
@@ -28,7 +28,7 @@ void Game::init() {
     std::string title = debugging ? "RedCraft DEBUG" : "RedCraft";
     InitWindow(width, height, title.c_str());
     SetTargetFPS(60);
-
+    discord.init("1026924641962430464"); // Pass application ID as a string
     voxelium.init();
 }
 
@@ -100,6 +100,7 @@ void Game::handleGameState() {
         case 3:
             voxelium.update();
             inventory.update();
+            discord.update();
             break;
 
         default:

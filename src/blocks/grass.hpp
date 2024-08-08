@@ -4,12 +4,13 @@
 #include <iostream>
 #include <raylib.h>
 #include "Voxel.hpp"
+#include "../resources/textures.hpp"
 
 class Grass : public Voxel {
 public:
     Grass(int x, int y) : Voxel(x, y, GREEN) {
         id = 1;  // Set id for Grass
-        texture = LoadTexture("assets/grass.png");
+        texture = grassTexture;
         this->autoRotate();
     }
 
@@ -17,6 +18,10 @@ public:
 
     void Draw() const override {
         Voxel::Draw();
+    }
+
+    void onTextureLoaded() {
+        this->texture = grassTexture;
     }
 
     void onClick() override {}

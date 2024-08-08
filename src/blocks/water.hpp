@@ -14,10 +14,14 @@ public:
 
     ~Water() override {
         Voxel::~Voxel();
-    };
+    }
 
     void Draw() const override {
         Voxel::Draw();
+    }
+
+    void onTextureLoaded() {
+
     }
 
     void onClick() override {}

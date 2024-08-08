@@ -52,7 +52,11 @@ virtual void Draw() const {
         DrawRectangleLines((x*blockSize)+offsetX, (y*blockSize)+offsetY, blockSize, blockSize, BLACK);
         DrawRectangle(realx, realy, blockSize, blockSize, {0,0,0,128});
     }
+
 }
+    virtual void onTextureLoaded() {
+        // Base class can have a default implementation, if necessary
+    }
 
     virtual void autoRotate() {
         // i want it to be 0, 90, 180, 270, 360

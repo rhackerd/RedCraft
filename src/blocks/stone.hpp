@@ -4,21 +4,26 @@
 #include <iostream>
 #include <raylib.h>
 #include "Voxel.hpp"
+#include "../resources/textures.hpp"
 
 class Cobblestone : public Voxel {
 public:
     Cobblestone(int x, int y) : Voxel(x, y, GRAY) {
-        id = 2;  // Set id for Stone
-        texture = LoadTexture("assets/stone1.png");
+        id = 2;  // Set id for Cobblestone
         this->autoRotate();
     }
 
     ~Cobblestone() override {
-        Voxel::~Voxel();
+        // We shouldn't call the base class destructor manually
+        // Voxel::~Voxel();  <-- Remove this line
     };
 
     void Draw() const override {
         Voxel::Draw();
+    }
+
+    void onTextureLoaded() {
+        this->texture = stoneTexture;
     }
 
     void onClick() override {}

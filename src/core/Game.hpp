@@ -1,15 +1,16 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "logging.hpp"
+#include "../utils/logging.hpp"
 #include <string>
 #include <raylib.h>
-#include "menu.hpp"
+#include "../gui/menu.hpp"
 #include "Voxelium.hpp"
-#include "settings.hpp"
-#include "loading.hpp"
-#include "gameCreator.hpp"
-#include "inventory.hpp"
+#include "../utils/settings.hpp"
+#include "../gui/loading.hpp"
+#include "../core/gameCreator.hpp"
+#include "../gui/inventory.hpp"
+#include "../utils/discord.hpp"
 
 class Game {
 public:
@@ -35,6 +36,7 @@ private:
     Loading loading;
     GameCreator creator;
     Inventory inventory;
+    Discord discord;
 };
 
 #endif // GAME_HPP

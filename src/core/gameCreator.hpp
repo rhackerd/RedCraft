@@ -2,8 +2,8 @@
 #define GAMECREATOR_H
 #include <raylib.h>
 #include <string>
-#include "constants.hpp"
-#include "gui.hpp"
+#include "../utils/constants.hpp"
+#include "../gui/gui.hpp"
 
 
 class GameCreator

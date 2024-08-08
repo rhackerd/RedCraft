@@ -4,10 +4,7 @@
 #include <raylib.h>
 #include <vector>
 #include <memory>
-#include "blocks/Voxel.hpp"
-#include "blocks/grass.hpp"
-#include "blocks/stone.hpp"
-#include "blocks/water.hpp"
+#include "../blocks/Voxel.hpp"
 
 class Voxelium
 {

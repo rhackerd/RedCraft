@@ -2,11 +2,12 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "stb_perlin.h"
+#include "../utils/stb_perlin.h"
 #include <raylib.h>
-#include "blocks/grass.hpp"
-#include "blocks/stone.hpp"
-#include "blocks/water.hpp"
+#include "../blocks/grass.hpp"
+#include "../blocks/stone.hpp"
+#include "../blocks/water.hpp"
+#include "../resources/textures.hpp"
 
 // Constructor
 Voxelium::Voxelium() : width(10), height(10), depth(10), offsetY(0), offsetX(0) {}
@@ -55,11 +56,14 @@ void Voxelium::init() {
 // Update blocks
 void Voxelium::update() {
     for (const auto& block : blocks) {
+        if (stoneTexture.id != 0 && grassTexture.id != 0 && block->texture.id == 0) {
+        block->onTextureLoaded();
+        }
         block->Update();
         block->SetOffset(offsetX, offsetY);
     }
-    this->offsetX += IsKeyDown(KEY_A) - IsKeyDown(KEY_D) * 2;
-    this->offsetY += IsKeyDown(KEY_W) - IsKeyDown(KEY_S) * 2;
+    this->offsetX += (IsKeyDown(KEY_A)*2) - (IsKeyDown(KEY_D)*2);
+    this->offsetY += (IsKeyDown(KEY_W)*2) - (IsKeyDown(KEY_S)*2);
 }
 
 // Draw blocks

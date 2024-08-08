@@ -1,7 +1,7 @@
 #ifndef GUI_HPP
 #define GUI_HPP
 
-#include "logging.hpp"
+#include "../utils/logging.hpp"
 #include <string>
 #include <functional>
 #include <raylib.h>

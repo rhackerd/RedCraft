@@ -1,6 +1,6 @@
 #include "menu.hpp"
 #include <iostream>
-#include "logging.hpp"
+#include "../utils/logging.hpp"
 
 Menu::Menu(int screenWidth, int screenHeight)
     : playButton("Play", 10, screenHeight - 80, []() { info("GameState Changed to 1"); }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f),

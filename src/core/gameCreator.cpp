@@ -1,12 +1,10 @@
 #include "gameCreator.hpp"
-#include <raylib.h>
 #include <string>
-#include "logging.hpp"
-#include "gui.hpp"
+#include "../gui/gui.hpp"
+#include <raylib.h>
 
 
-
-GameCreator::GameCreator() : seed(324924929), confirm("Create", 10, GetScreenHeight() - 220, []() { debug("Creating world.."); }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f), load("Quit", 10, GetScreenHeight() - 220, []() { debug("GameState Changed to -1"); }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f) {
+GameCreator::GameCreator() : seed(324924929), confirm("Create", 10, GetScreenHeight() - 220, []() {  }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f), load("Quit", 10, GetScreenHeight() - 220, []() { debug("GameState Changed to -1"); }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f) {
 
 }
 
@@ -30,6 +28,7 @@ void GameCreator::Update() {
 
 void GameCreator::Draw() {
     this->Update();
+    DrawText("Address to join: 127.0.0.1:25565", 0,0 , 20, WHITE);
     confirm.draw();
 }
 

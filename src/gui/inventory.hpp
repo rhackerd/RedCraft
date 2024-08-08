@@ -5,7 +5,7 @@
 #include <utility>
 #include <SDL2/SDL.h>
 #include <raylib.h>
-#include "items.hpp"
+#include "../resources/items.hpp"
 
 // Forward declaration of Item class or struct
 
