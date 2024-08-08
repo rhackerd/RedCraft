@@ -1,5 +1,6 @@
 #ifndef GRASS_H
 #define GRASS_H
+
 #include <iostream>
 #include <raylib.h>
 #include "Voxel.hpp"
@@ -9,21 +10,17 @@ public:
     Grass(int x, int y) : Voxel(x, y, GREEN) {
         id = 1;  // Set id for Grass
         texture = LoadTexture("assets/grass.png");
+        this->autoRotate();
     }
 
-    ~Grass() override = default;
+    ~Grass() override {}
 
     void Draw() const override {
         Voxel::Draw();
     }
 
-    void onClick() override {
-        std::cout << "test" << std::endl;
-    }
-
-    void onHover() override {
-        
-    }
+    void onClick() override {}
+    void onHover() override {}
 };
 
 #endif // GRASS_H

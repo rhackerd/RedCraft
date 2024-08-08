@@ -2,12 +2,12 @@
 #define VOXELIUM_H
 
 #include <raylib.h>
-#include <utility>
 #include <vector>
 #include <memory>
 #include "blocks/Voxel.hpp"
 #include "blocks/grass.hpp"
-
+#include "blocks/stone.hpp"
+#include "blocks/water.hpp"
 
 class Voxelium
 {
@@ -21,7 +21,7 @@ public:
     void delBlock(int x, int y);
     void changeBlock(int x, int y);
     void setBlock(int x, int y);
-
+    void setOffset(int x, int y);
 
 private:
     int width;
@@ -32,4 +32,4 @@ private:
     std::vector<std::shared_ptr<Voxel>> blocks;
 };
 
-#endif
+#endif // VOXELIUM_H

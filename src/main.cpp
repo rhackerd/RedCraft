@@ -10,11 +10,14 @@
 #include "Game.hpp"
 #include <stdio.h>
 #include <SDL2/SDL.h>
+#include <stdio.h>
 #define DEBUG false
 using namespace std;
 
 void CustomLog(int msgType, const char *text, va_list args)
 {
+
+
     //printf("%s", text);
     switch (msgType)
     {
@@ -30,6 +33,8 @@ void CustomLog(int msgType, const char *text, va_list args)
 }
 
 int main() {
+
+
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         cerr << "Failed to initialize SDL: " << SDL_GetError() << endl;
         return 1;

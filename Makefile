@@ -345,30 +345,6 @@ src/menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/menu.cpp.s
 .PHONY : src/menu.cpp.s
 
-src/perlinNoise.o: src/perlinNoise.cpp.o
-.PHONY : src/perlinNoise.o
-
-# target to build an object file
-src/perlinNoise.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/perlinNoise.cpp.o
-.PHONY : src/perlinNoise.cpp.o
-
-src/perlinNoise.i: src/perlinNoise.cpp.i
-.PHONY : src/perlinNoise.i
-
-# target to preprocess a source file
-src/perlinNoise.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/perlinNoise.cpp.i
-.PHONY : src/perlinNoise.cpp.i
-
-src/perlinNoise.s: src/perlinNoise.cpp.s
-.PHONY : src/perlinNoise.s
-
-# target to generate assembly for a file
-src/perlinNoise.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/perlinNoise.cpp.s
-.PHONY : src/perlinNoise.cpp.s
-
 src/settings.o: src/settings.cpp.o
 .PHONY : src/settings.o
 
@@ -392,6 +368,30 @@ src/settings.s: src/settings.cpp.s
 src/settings.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/settings.cpp.s
 .PHONY : src/settings.cpp.s
+
+src/worldGen.o: src/worldGen.cpp.o
+.PHONY : src/worldGen.o
+
+# target to build an object file
+src/worldGen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/worldGen.cpp.o
+.PHONY : src/worldGen.cpp.o
+
+src/worldGen.i: src/worldGen.cpp.i
+.PHONY : src/worldGen.i
+
+# target to preprocess a source file
+src/worldGen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/worldGen.cpp.i
+.PHONY : src/worldGen.cpp.i
+
+src/worldGen.s: src/worldGen.cpp.s
+.PHONY : src/worldGen.s
+
+# target to generate assembly for a file
+src/worldGen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/worldGen.cpp.s
+.PHONY : src/worldGen.cpp.s
 
 # Help Target
 help:
@@ -429,12 +429,12 @@ help:
 	@echo "... src/menu.o"
 	@echo "... src/menu.i"
 	@echo "... src/menu.s"
-	@echo "... src/perlinNoise.o"
-	@echo "... src/perlinNoise.i"
-	@echo "... src/perlinNoise.s"
 	@echo "... src/settings.o"
 	@echo "... src/settings.i"
 	@echo "... src/settings.s"
+	@echo "... src/worldGen.o"
+	@echo "... src/worldGen.i"
+	@echo "... src/worldGen.s"
 .PHONY : help
 
 

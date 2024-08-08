@@ -23,3 +23,5 @@ target_link_libraries(${PROJECT_NAME} raylib SDL2::SDL2)
 
 # Optionally, include directories for SDL2 if necessary
 include_directories(${SDL2_INCLUDE_DIRS})
+
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
