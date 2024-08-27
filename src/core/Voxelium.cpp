@@ -35,20 +35,7 @@ std::vector<float> generate2DPerlinNoise(int width, int height, float scale) {
 
 // Initialization
 void Voxelium::init() {
-    std::vector<float> noise = generate2DPerlinNoise(width, height, 1.0f);
 
-
-    for (int y = 0; y < height; ++y) {
-        for (int x = 0; x < width; ++x) {
-            if (noise[y * width + x] > 0.4f) {
-                blocks.emplace_back(std::make_shared<Cobblestone>(x, y));
-            } else if (noise[y * width + x] > 0.3f) {
-                blocks.emplace_back(std::make_shared<Grass>(x, y));
-            } else {
-                blocks.emplace_back(std::make_shared<Water>(x, y));
-            }
-        }
-    }
 
 
 }

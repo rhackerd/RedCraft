@@ -11,6 +11,8 @@
 #include "../core/gameCreator.hpp"
 #include "../gui/inventory.hpp"
 #include "../utils/discord.hpp"
+#include "../utils/client.hpp"
+
 
 class Game {
 public:
@@ -37,6 +39,8 @@ private:
     GameCreator creator;
     Inventory inventory;
     Discord discord;
+    int sock;
 };
+
 
 #endif // GAME_HPP
