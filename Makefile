@@ -225,6 +225,30 @@ src/core/worldGen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/core/worldGen.cpp.s
 .PHONY : src/core/worldGen.cpp.s
 
+src/gui/chat.o: src/gui/chat.cpp.o
+.PHONY : src/gui/chat.o
+
+# target to build an object file
+src/gui/chat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/chat.cpp.o
+.PHONY : src/gui/chat.cpp.o
+
+src/gui/chat.i: src/gui/chat.cpp.i
+.PHONY : src/gui/chat.i
+
+# target to preprocess a source file
+src/gui/chat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/chat.cpp.i
+.PHONY : src/gui/chat.cpp.i
+
+src/gui/chat.s: src/gui/chat.cpp.s
+.PHONY : src/gui/chat.s
+
+# target to generate assembly for a file
+src/gui/chat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/chat.cpp.s
+.PHONY : src/gui/chat.cpp.s
+
 src/gui/gui.o: src/gui/gui.cpp.o
 .PHONY : src/gui/gui.o
 
@@ -486,6 +510,9 @@ help:
 	@echo "... src/core/worldGen.o"
 	@echo "... src/core/worldGen.i"
 	@echo "... src/core/worldGen.s"
+	@echo "... src/gui/chat.o"
+	@echo "... src/gui/chat.i"
+	@echo "... src/gui/chat.s"
 	@echo "... src/gui/gui.o"
 	@echo "... src/gui/gui.i"
 	@echo "... src/gui/gui.s"

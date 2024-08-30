@@ -10,17 +10,19 @@ class Grass : public Voxel {
 public:
     Grass(int x, int y) : Voxel(x, y, GREEN) {
         id = 1;  // Set id for Grass
-        texture = grassTexture;
+        texture = grassTexture;  // Assuming grassTexture is properly initialized
         this->autoRotate();
     }
 
-    ~Grass() override {}
+    ~Grass() override {
+        UnloadTexture(grassTexture);
+    }
 
     void Draw() const override {
         Voxel::Draw();
     }
 
-    void onTextureLoaded() {
+    void onTextureLoaded() override {
         this->texture = grassTexture;
     }
 

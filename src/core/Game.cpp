@@ -11,72 +11,26 @@
 #include <cstring>
 #include <string>
 #include <iostream>
-
-std::string recieve_data(int sock) {
-    char buffer[1024] = {0};
-    int valread = read(sock, buffer, sizeof(buffer) - 1);
-    if (valread < 0) {
-        std::cerr << "Error reading from socket" << std::endl;
-        return "";
-    }
-    std::string response = std::string(buffer, valread);
-    if (response.empty()) {
-            std::cerr << "Failed to receive data" << std::endl;
-        }
-    return response;
-}
-
-void send_int(int number, int sock) {
-    int value = number;
-    int32_t network_value = htonl(value);
-    if (send(sock, &network_value, sizeof(network_value), 0) < 0) {
-        std::cerr << "Send failed: " << strerror(errno) << std::endl;
-        close(sock);
-    }
-    return;
-}
-
-void send_string(std::string string, int sock) {
-    std::string message = string;
-    int bytes_sent = send(sock, message.c_str(), message.size(), 0);
-    if (bytes_sent < 0) {
-        std::cerr << "Send failed: " << strerror(errno) << std::endl;
-        close(sock);
-    }
-}
-int connectToServer(int port) {
-    int sock = 0;
-    struct sockaddr_in serv_addr;
-
-    // Create socket
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-        std::cerr << "Socket creation error: " << strerror(errno) << std::endl;
-    }
-
-    serv_addr.sin_family = AF_INET;
-    serv_addr.sin_port = htons(port);
-
-    // Convert IPv4 address from text to binary
-    if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0) {
-        std::cerr << "Invalid address / Address not supported" << std::endl;
-        close(sock);
-    }
-
-    // Connect to server
-    if (connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0) {
-        std::cerr << "Connection failed: " << strerror(errno) << std::endl;
-        close(sock);
-    }
-    return sock;
-
-}
+#include "../utils/client.hpp"
 
 Game::Game()
     : gameState(0), width(800), height(600),
-      menu(width, height), voxelium(), settings(), loading(), creator(), debugging(false), inventory(), discord(){
+      menu(width, height), voxelium(), settings(), loading(), creator(), debugging(false), inventory(), discord(), chat(){
 }
 
 Game::~Game() {
+    // Properly close the game
+    voxelium.~Voxelium();
+    settings.~Settings();
+    loading.~Loading();
+    creator.~GameCreator();
+    inventory.~Inventory();
+    discord.~Discord();
+    menu.~Menu();
+    chat.~Chat();
+    // Properly close the client
+    std::string player_name = "rhacker_8853";
+    unload_server(sock,player_name);
     close(sock);
     CloseWindow(); // Properly close the raylib window
 }
@@ -126,6 +80,7 @@ void Game::render() {
         case 3:
             voxelium.draw();
             inventory.draw();
+            chat.Draw();
             break;
     }
 
@@ -171,17 +126,22 @@ void Game::handleGameState() {
             gameState += creator.next();
             if (creator.next() == 1) {
                 sock = connectToServer(creator.getServerPort());
-
-                // Send integer to server
-                int value = 1;
-                send_int(value, sock);
-
-                std::string message = "rhacker_8853";
-                send_string(message, sock);
-
-                std::string response = recieve_data(sock);
+                chat.sock = sock;
+                std::string player_name = "rhacker_8853";
+                std::string response = load_server(sock, player_name);
                 info(response);
-                 
+
+                int x = 0;
+                int y = 0;
+                std::pair<int, std::vector<int>> cell = get_cell(sock, x, y);
+                for (int i = 0; i < 16; i++) {
+                    for (int j = 0; j < 16; j++) {
+                        // Ensure that cell.second is a std::vector<int>
+                        int blockId = cell.second[i * 16 + j]; // Get the block ID from the vector
+                        voxelium.setBlock(i, j, blockId-1); // Call setBlock with the block ID
+                    }
+                }
+
 
             }
             discord.changeState("Connecting to server");
@@ -192,6 +152,7 @@ void Game::handleGameState() {
             voxelium.update();
             discord.changeState("In game");
             inventory.update();
+            chat.Update();
             break;
 
         default:

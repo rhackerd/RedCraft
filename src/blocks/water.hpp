@@ -12,16 +12,14 @@ public:
         this->autoRotate();
     }
 
-    ~Water() override {
-        Voxel::~Voxel();
-    }
+    ~Water() override {}
 
     void Draw() const override {
         Voxel::Draw();
     }
 
-    void onTextureLoaded() {
-
+    void onTextureLoaded() override {
+        // If you have a water texture, set it here
     }
 
     void onClick() override {}

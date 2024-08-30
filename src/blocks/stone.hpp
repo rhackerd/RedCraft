@@ -14,8 +14,7 @@ public:
     }
 
     ~Cobblestone() override {
-        // We shouldn't call the base class destructor manually
-        // Voxel::~Voxel();  <-- Remove this line
+        UnloadTexture(stoneTexture);
     };
 
     void Draw() const override {

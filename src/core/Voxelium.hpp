@@ -17,7 +17,7 @@ public:
     void genChunk(int x, int y);
     void delBlock(int x, int y);
     void changeBlock(int x, int y);
-    void setBlock(int x, int y);
+    void setBlock(int x, int y, int id);
     void setOffset(int x, int y);
 
 private:

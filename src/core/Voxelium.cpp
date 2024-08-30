@@ -13,7 +13,9 @@
 Voxelium::Voxelium() : width(10), height(10), depth(10), offsetY(0), offsetX(0) {}
 
 // Destructor
-Voxelium::~Voxelium() {}
+Voxelium::~Voxelium() {
+
+}
 
 // Function to generate 2D Perlin noise
 std::vector<float> generate2DPerlinNoise(int width, int height, float scale) {
@@ -35,9 +37,7 @@ std::vector<float> generate2DPerlinNoise(int width, int height, float scale) {
 
 // Initialization
 void Voxelium::init() {
-
-
-
+    
 }
 
 // Update blocks
@@ -75,8 +75,21 @@ void Voxelium::changeBlock(int x, int y) {
     // Implementation needed
 }
 
-void Voxelium::setBlock(int x, int y) {
-    // Implementation needed
+// grass - 0
+// water - 1
+
+void Voxelium::setBlock(int x, int y, int id) {
+    switch (id) {
+        case 0:
+            blocks.push_back(std::make_shared<Grass>(x, y));
+            break;
+        case 1:
+            blocks.push_back(std::make_shared<Water>(x, y));
+            break;
+        case 2:
+            blocks.push_back(std::make_shared<Cobblestone>(x, y));
+            break;
+    }
 }
 
 void Voxelium::setOffset(int x, int y) {

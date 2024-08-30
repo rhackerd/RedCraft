@@ -12,6 +12,7 @@
 #include "../gui/inventory.hpp"
 #include "../utils/discord.hpp"
 #include "../utils/client.hpp"
+#include "../gui/chat.hpp"
 
 
 class Game {
@@ -39,6 +40,7 @@ private:
     GameCreator creator;
     Inventory inventory;
     Discord discord;
+    Chat chat;
     int sock;
 };
 
