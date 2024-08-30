@@ -35,7 +35,6 @@ private:
 
     Menu menu;
     Voxelium voxelium;
-    Settings settings;
     Loading loading;
     GameCreator creator;
     Inventory inventory;

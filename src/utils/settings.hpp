@@ -7,6 +7,12 @@ class Settings {
 public:
     Settings();
     ~Settings();
+    void Draw();
+
+private:
+    int volume;
+    int resolution;
+    
 };
 
 

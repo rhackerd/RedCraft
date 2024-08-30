@@ -14,8 +14,6 @@
 #include "resources/textures.hpp"
 
 
-
-
 #define DEBUG false
 
 

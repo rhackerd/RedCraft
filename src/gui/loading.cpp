@@ -4,7 +4,7 @@
 
 
 Loading::Loading() {
-    progress = 0;
+    progress = 100;
 }
 
 Loading::~Loading() {}

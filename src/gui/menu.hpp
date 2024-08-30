@@ -16,6 +16,7 @@ public:
     int nextStage();
 
 private:
+    void DrawBG();
     Button playButton;
     Button settingsButton;
     Button quitButton;

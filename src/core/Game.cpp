@@ -15,13 +15,12 @@
 
 Game::Game()
     : gameState(0), width(800), height(600),
-      menu(width, height), voxelium(), settings(), loading(), creator(), debugging(false), inventory(), discord(), chat(){
+      menu(width, height), voxelium(), loading(), creator(), debugging(false), inventory(), discord(), chat(){
 }
 
 Game::~Game() {
     // Properly close the game
     voxelium.~Voxelium();
-    settings.~Settings();
     loading.~Loading();
     creator.~GameCreator();
     inventory.~Inventory();
