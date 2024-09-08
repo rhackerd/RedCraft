@@ -49,8 +49,10 @@ void Voxelium::update() {
         block->Update();
         block->SetOffset(offsetX, offsetY);
     }
-    this->offsetX += (IsKeyDown(KEY_A)*2) - (IsKeyDown(KEY_D)*2);
-    this->offsetY += (IsKeyDown(KEY_W)*2) - (IsKeyDown(KEY_S)*2);
+    if (this->disableMoving == false) {
+        this->offsetX += (IsKeyDown(KEY_A)*2) - (IsKeyDown(KEY_D)*2);
+        this->offsetY += (IsKeyDown(KEY_W)*2) - (IsKeyDown(KEY_S)*2);
+    }
 }
 
 // Draw blocks
@@ -60,6 +62,10 @@ void Voxelium::draw() {
     for (const auto& block : blocks) {
         block->Draw();
     }
+}
+
+void Voxelium::setMovement(bool enabled) {
+    this->disableMoving = enabled;
 }
 
 // Placeholder functions for block management

@@ -13,6 +13,9 @@
 #include "../utils/discord.hpp"
 #include "../utils/client.hpp"
 #include "../gui/chat.hpp"
+#include <thread>
+#include <mutex>
+
 
 
 class Game {
@@ -22,6 +25,7 @@ public:
     void run();
     void init();
     void debug(bool debug);
+    void recieveData();
 
 private:
     void update();
@@ -41,6 +45,8 @@ private:
     Discord discord;
     Chat chat;
     int sock;
+    bool stopRecieveData;
+    std::thread eventThread;
 };
 
 

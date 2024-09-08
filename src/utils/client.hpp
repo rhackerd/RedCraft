@@ -28,4 +28,6 @@ std::pair<int, std::vector<int>> get_cell(int sock, int x, int y);
 
 int recieve_int(int sock);
 
+std::string send_chat(int sock, std::string message) ;
+
 #endif // CLIENT_HPP

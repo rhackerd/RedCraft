@@ -1,7 +1,9 @@
 #include "../core/Game.hpp"
 #include "../gui/gui.hpp"
 #include "gameCreator.hpp"
+#include <cmath>
 #include <cstdint>
+#include <cstdio>
 #include <cstdlib>
 #include <netinet/in.h>
 #include <raylib.h>
@@ -12,10 +14,13 @@
 #include <string>
 #include <iostream>
 #include "../utils/client.hpp"
+#include <thread>
+#include <mutex>
+
 
 Game::Game()
     : gameState(0), width(800), height(600),
-      menu(width, height), voxelium(), loading(), creator(), debugging(false), inventory(), discord(), chat(){
+      menu(width, height), voxelium(), loading(), creator(), debugging(false), inventory(), discord(), chat(), stopRecieveData(false){
 }
 
 Game::~Game() {
@@ -98,6 +103,34 @@ void Game::render() {
     EndDrawing();
 }
 
+
+
+void Game::recieveData() {
+    info("Starting to receive data...");
+    stopRecieveData = false;  // This flag should be false to allow the loop to run
+
+    // Keep receiving data until stopRecieveData is set to true
+    while (!stopRecieveData) {
+        if (sock > 0) {
+            int data = recieve_int(sock);
+            if (data == -1) {
+                info("Received invalid data, stopping...");
+            } else {
+                // Handle valid data here
+                info("Data received successfully");
+            }
+        } else {
+            info("Socket is invalid, exiting...");
+            break;  // Exit the loop if the socket is invalid
+        }
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));  // Prevent CPU hogging
+    }
+
+    info("Stopped receiving data.");
+}
+
+
 void Game::handleGameState() {
     discord.update();
     switch (gameState) {
@@ -124,11 +157,16 @@ void Game::handleGameState() {
         case 2: {
             gameState += creator.next();
             if (creator.next() == 1) {
+                info("creating thread");
+                eventThread = std::thread(&Game::recieveData, this);
                 sock = connectToServer(creator.getServerPort());
                 chat.sock = sock;
                 std::string player_name = "rhacker_8853";
                 std::string response = load_server(sock, player_name);
                 info(response);
+                char buffer[256];
+                sprintf(buffer, "[SERVER] %s", response.c_str());
+                chat.send(buffer);
 
                 int x = 0;
                 int y = 0;
@@ -148,6 +186,11 @@ void Game::handleGameState() {
         }
 
         case 3:
+            voxelium.setMovement(chat.isEnabled());
+            for (const auto& message : chat.sendBuffer) {
+                chat.send(send_chat(sock, message));
+                chat.sendBuffer.erase(chat.sendBuffer.begin());
+            }
             voxelium.update();
             discord.changeState("In game");
             inventory.update();

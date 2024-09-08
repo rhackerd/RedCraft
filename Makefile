@@ -273,6 +273,30 @@ src/gui/gui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/gui.cpp.s
 .PHONY : src/gui/gui.cpp.s
 
+src/gui/input.o: src/gui/input.cpp.o
+.PHONY : src/gui/input.o
+
+# target to build an object file
+src/gui/input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/input.cpp.o
+.PHONY : src/gui/input.cpp.o
+
+src/gui/input.i: src/gui/input.cpp.i
+.PHONY : src/gui/input.i
+
+# target to preprocess a source file
+src/gui/input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/input.cpp.i
+.PHONY : src/gui/input.cpp.i
+
+src/gui/input.s: src/gui/input.cpp.s
+.PHONY : src/gui/input.s
+
+# target to generate assembly for a file
+src/gui/input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/input.cpp.s
+.PHONY : src/gui/input.cpp.s
+
 src/gui/inventory.o: src/gui/inventory.cpp.o
 .PHONY : src/gui/inventory.o
 
@@ -344,6 +368,54 @@ src/gui/menu.s: src/gui/menu.cpp.s
 src/gui/menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/menu.cpp.s
 .PHONY : src/gui/menu.cpp.s
+
+src/gui/player.o: src/gui/player.cpp.o
+.PHONY : src/gui/player.o
+
+# target to build an object file
+src/gui/player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/player.cpp.o
+.PHONY : src/gui/player.cpp.o
+
+src/gui/player.i: src/gui/player.cpp.i
+.PHONY : src/gui/player.i
+
+# target to preprocess a source file
+src/gui/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/player.cpp.i
+.PHONY : src/gui/player.cpp.i
+
+src/gui/player.s: src/gui/player.cpp.s
+.PHONY : src/gui/player.s
+
+# target to generate assembly for a file
+src/gui/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/player.cpp.s
+.PHONY : src/gui/player.cpp.s
+
+src/gui/server.o: src/gui/server.cpp.o
+.PHONY : src/gui/server.o
+
+# target to build an object file
+src/gui/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/server.cpp.o
+.PHONY : src/gui/server.cpp.o
+
+src/gui/server.i: src/gui/server.cpp.i
+.PHONY : src/gui/server.i
+
+# target to preprocess a source file
+src/gui/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/server.cpp.i
+.PHONY : src/gui/server.cpp.i
+
+src/gui/server.s: src/gui/server.cpp.s
+.PHONY : src/gui/server.s
+
+# target to generate assembly for a file
+src/gui/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RedCraft.dir/build.make CMakeFiles/RedCraft.dir/src/gui/server.cpp.s
+.PHONY : src/gui/server.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -516,6 +588,9 @@ help:
 	@echo "... src/gui/gui.o"
 	@echo "... src/gui/gui.i"
 	@echo "... src/gui/gui.s"
+	@echo "... src/gui/input.o"
+	@echo "... src/gui/input.i"
+	@echo "... src/gui/input.s"
 	@echo "... src/gui/inventory.o"
 	@echo "... src/gui/inventory.i"
 	@echo "... src/gui/inventory.s"
@@ -525,6 +600,12 @@ help:
 	@echo "... src/gui/menu.o"
 	@echo "... src/gui/menu.i"
 	@echo "... src/gui/menu.s"
+	@echo "... src/gui/player.o"
+	@echo "... src/gui/player.i"
+	@echo "... src/gui/player.s"
+	@echo "... src/gui/server.o"
+	@echo "... src/gui/server.i"
+	@echo "... src/gui/server.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

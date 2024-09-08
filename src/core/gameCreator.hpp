@@ -7,6 +7,8 @@
 #include <utility>
 #include <vector>
 #include <string>
+#include "../gui/server.hpp"
+#include "../gui/input.hpp"
 
 
 class GameCreator
@@ -35,16 +37,28 @@ public:
     int getServerPort();
 
 private:
+    void DrawBG();
+    void addServer(std::vector<std::pair<std::string, std::pair<int, std::pair<std::string, std::string>>>>& servers, const std::string& ip, int port, const std::string& motd, const std::string& name);
     int seed = 324924929; // this is default seed for the perlin noise
     std::string saveName;
     int difficulty = NORMAL;
     bool cheats = false;
     Button confirm;
     Button load;
+    Button back;
     int timeElapsed;
     std::pair<int, std::pair<std::string, std::string>> Localserver;
     //       port, motd                 , server name
     int sock;
+    std::vector<Server> servers;
+    int selected = -1;
+    int serverPort;
+    std::string serverIp;
+    Input serverName;
+    Input serverIP;
+    bool creatingServer = false;
+    Button createServer;
+
 };
 
 

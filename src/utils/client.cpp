@@ -120,3 +120,10 @@ std::pair<int, std::vector<int>> get_cell(int sock, int x, int y) {
     // Return the success code (e.g., 0) and the cell data
     return std::make_pair(size, cell);
 }
+
+
+std::string send_chat(int sock, std::string message) {
+    send_int(9, sock);
+    send_string(message, sock);
+    return recieve_data(sock);
+}

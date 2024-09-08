@@ -7,10 +7,12 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include "../resources/textures.hpp"
+#include "../gui/server.hpp"
 
-GameCreator::GameCreator() : seed(324924929), confirm("Create", 10, GetScreenHeight() - 220, []() {  }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f), load("Quit", 10, GetScreenHeight() - 220, []() { debug("GameState Changed to -1"); }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f) {
+GameCreator::GameCreator() : seed(324924929), confirm("Join", 10, GetScreenHeight() - 220, []() {  }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f), load("Quit", 10, GetScreenHeight() - 220, []() { debug("GameState Changed to -1"); }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f), back("Back", 10, GetScreenHeight() - 220, []() {  }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f), serverName(0,0), serverIP(0,500), createServer("Create", GetScreenWidth() - 100, GetScreenHeight() - 50, {  }, {223, 208, 184, 255}, {148, 137, 121, 255}, 0.1f) {
 timeElapsed = 0;
-
+servers = {}; 
 Localserver = {0, {"", ""}};
 }
 GameCreator::~GameCreator() {
@@ -72,10 +74,15 @@ int GameCreator::connectToServer(int port) {
 }
 
 void GameCreator::Update() {
+    serverIP.update();
+    serverName.update();
     confirm.Events();
     load.Events();
+    back.Events();
     confirm.setX(GetScreenWidth()-100);
     confirm.setY(GetScreenHeight() - 50);
+    back.setX(0);
+    back.setY(GetScreenHeight() - 50);
     this->Events();
     if (GetTime() > 3.0 + timeElapsed) {
         timeElapsed += 3.0;
@@ -88,7 +95,6 @@ void GameCreator::Events() {
 }
 
 void GameCreator::CheckServers() {
-    info("checking for servers");
 
     this->pingServer();
 }
@@ -115,24 +121,64 @@ void GameCreator::pingServer() {
 
 
 void GameCreator::Draw() {
+    this->DrawBG();
     this->Update();
-    this->drawServer();
-    if (!Localserver.first) {
+    if (this->creatingServer == false) { 
+        this->drawServer(); 
+        if (!Localserver.first) {
         DrawText("No servers found", 10, 10, 30, {255,255,255,255});
-        DrawText("If you dont know how to create one\ngo to https://github.com/rhackerd/redcraft-server", 10, 45, 20, {255,255,255,100});
+        DrawText("If you dont know how to create one\ngo to https://github.com/rhackerd/redcraft-server\nor create one manually with + below", 10, 45, 20, {255,255,255,100});
+        }else{
+            confirm.draw();
+        }
     }else {
-        confirm.draw();
+        serverIP.update();
+        serverName.update();
+        serverIP.draw();
+        serverName.draw();
     }
     load.draw();
+    back.draw();
 }
 
 void GameCreator::drawServer() {
+    const int spacing = 10;
+    const int size = 100;
+    float y_offset = 0;  // Use float for y_offset to match the expected type in DrawRectangleRounded
+
+    // Draw local server if it exists
     if (Localserver.first != 0) {
-        DrawRectangleRounded({10,10,static_cast<float>(GetScreenWidth() - 20), 100}, 0.2, 1, {0,0,0 ,255});
-        DrawText(Localserver.second.second.c_str(), 15, 15, 30, {255,255,255,255});
-        DrawText(Localserver.second.first.c_str(), 15, 45, 25, {255,255,255,100});
+        DrawRectangleRounded(
+            {10.0f, 10.0f, static_cast<float>(GetScreenWidth() - 20), static_cast<float>(size)}, 
+            0.2f, 1, 
+            {0, 0, 0, 255}
+        );
+        DrawText(Localserver.second.second.c_str(), 15, static_cast<int>(15 + y_offset), 30, {255, 255, 255, 255});
+        DrawText(Localserver.second.first.c_str(), 15, static_cast<int>(45 + y_offset), 25, {255, 255, 255, 100});
     }
+    y_offset += size + spacing; // Move to next position
+
+    // Draw list of servers
+    for (const auto& server : servers) {
+        server.Update();
+        server.Draw(y_offset);
+        y_offset += size + spacing;
+    }
+    // draw another server with +
+        if (CheckCollisionPointRec(GetMousePosition(), {10.0f, 10.0f + y_offset, static_cast<float>(GetScreenWidth() - 20), static_cast<float>(size)})) {
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                this->creatingServer = true;
+            }
+        }
+            DrawRectangleRounded(
+            {10.0f, 10.0f + y_offset, static_cast<float>(GetScreenWidth() - 20), static_cast<float>(size)}, 
+            0.2f, 1, 
+            {0, 0, 0, 255}
+        );
+        DrawText("+", 20+(GetScreenWidth()/2)-MeasureText("+", 100), y_offset+((size/2)-MeasureText("+", 100)+15), 100, {255,255,255,100});
 }
+
+
 
 
 int GameCreator::getServerPort() {
@@ -165,4 +211,20 @@ int GameCreator::getDifficulty() {
 int GameCreator::getCheats() {
     // like creative etc.
     return cheats;
+}
+
+void GameCreator::DrawBG() {
+    int screenWidth = GetScreenWidth();
+    int screenHeight = GetScreenHeight();
+
+    // Get the dimensions of the texture
+    int textureWidth = grassTexture.width;
+    int textureHeight = grassTexture.height;
+
+    // Loop through the screen in steps of the texture size
+    for (int y = 0; y < screenHeight; y += textureHeight) {
+        for (int x = 0; x < screenWidth; x += textureWidth) {
+            DrawTexture(stoneTexture, x, y, WHITE);
+        }
+    }
 }

@@ -19,6 +19,7 @@ public:
     void changeBlock(int x, int y);
     void setBlock(int x, int y, int id);
     void setOffset(int x, int y);
+    void setMovement(bool enabled);
 
 private:
     int width;
@@ -27,6 +28,7 @@ private:
     int offsetY;
     int offsetX;
     std::vector<std::shared_ptr<Voxel>> blocks;
+    bool disableMoving;
 };
 
 #endif // VOXELIUM_H

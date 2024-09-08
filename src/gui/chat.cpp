@@ -1,8 +1,11 @@
 #include "../gui/chat.hpp"
+#include <cmath>
+#include <cstdio>
 #include <raylib.h>
-
+#include "../utils/logging.hpp"
 #include <raylib.h>
 #include <string>
+#include <vector>
 
 
 Chat::Chat() {
@@ -29,8 +32,8 @@ void Chat::Draw() {
 
 void Chat::Update() {
     if (IsKeyPressed(KEY_ENTER)) {
-        this->clearText();
         this->trySend();
+        this->clearText();
     }else if (IsKeyPressed(KEY_T) && this->isChatOpen == false) {
         this->isChatOpen = true;
     }else if((IsKeyPressedRepeat(KEY_BACKSPACE) || IsKeyPressed(KEY_BACKSPACE)) && this->actText.length() > 0) {
@@ -51,10 +54,22 @@ void Chat::clearText() {
     this->isChatOpen = false;
 }
 
+bool Chat::isEnabled() {
+    return this->isChatOpen;
+}
+
 void Chat::trySend() {
-    if (this->tryToSend == true) {
-        this->tryToSend = false;
+    if (this->actText.length() > 0) {
+        if (this->actText[0] == '/') {
+            this->command(this->actText.erase(0, 1), {});   
+        }else{
+            sendBuffer.push_back(this->actText);
+        }
     }
+}
+
+void Chat::readCache(std::string cache) {
+
 }
 
 void Chat::drawErr() {
@@ -69,9 +84,30 @@ void Chat::drawBG() {
 
 
 void Chat::drawHistory() {
-
+    for (int i = 0; i < this->messages.size(); i++) {
+        DrawText(this->messages[i].c_str(), 2, 0 + 22 + (i * 20) - 24, 20, WHITE);
+    }
 }
 
 void Chat::drawText() {
     DrawText(this->actText.c_str(), 2, GetScreenHeight() - 22, 20, WHITE);
+}
+
+void Chat::send(std::string text) {
+    this->messages.push_back(text);
+}
+
+void Chat::command(std::string command, std::vector<std::string> args = {}) {
+    if (command == "help") {
+        std::string help = "Commands:\n";
+        this->send(help);
+    }else if (command == "clear") {
+        this->messages.clear();
+    }else if(command == "leave") {
+        send("leaving...");
+    }else {
+        char buffer[256];
+        std::sprintf(buffer, "command not found: %s", command.c_str());
+        send(buffer); 
+    }
 }
