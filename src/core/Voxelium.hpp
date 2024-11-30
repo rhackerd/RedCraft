@@ -20,15 +20,22 @@ public:
     void setBlock(int x, int y, int id);
     void setOffset(int x, int y);
     void setMovement(bool enabled);
+    void setChunk(std::vector<std::pair<int, std::pair<int, int>>> chunk);
 
 private:
     int width;
     int height;
+
+    bool render_layer_0;
+    bool render_layer_1;
+    bool update_layers;
+    bool disable_moving;
+
     int depth;
     int offsetY;
     int offsetX;
     std::vector<std::shared_ptr<Voxel>> blocks;
-    bool disableMoving;
+    std::vector<std::pair<int, std::pair<int, Texture2D>>> chunk_texture;
 };
 
 #endif // VOXELIUM_H

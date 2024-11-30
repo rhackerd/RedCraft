@@ -42,6 +42,10 @@ void Inventory::draw() {
         // Draw the inner item rectangle with padding
         DrawRectangle(x + ITEM_PADDING, y + ITEM_PADDING, ITEM_SIZE - 2 * ITEM_PADDING, ITEM_SIZE - 2 * ITEM_PADDING, currentItemColor);
     }
+    
+    if (!items.empty()) {
+        this->DrawItem(items[selected].first, selected);
+    }
 }
 
 void Inventory::update() {
@@ -118,4 +122,19 @@ void Inventory::update() {
 
 Item Inventory::getSelectedItem() {
     return items[selected].first;
+}
+
+void Inventory::DrawItem(Item item, int pos) {
+    int screenWidth = GetScreenWidth();
+    int totalWidth = invSize * ITEM_SIZE; // Total width of all items
+    int startX = screenWidth - totalWidth; // Starting X position for the first item
+    int x = startX + pos * ITEM_SIZE;
+    int y = 0;
+    const Color BORDER_COLOR = BLACK;
+    const Color ITEM_COLOR = WHITE;
+    const Color SELECTED_COLOR = YELLOW;
+    Color currentItemColor = (pos == selected) ? SELECTED_COLOR : ITEM_COLOR;
+
+    DrawRectangle(x, y, ITEM_SIZE, ITEM_SIZE, BORDER_COLOR);
+    DrawRectangle(x + ITEM_PADDING, y + ITEM_PADDING, ITEM_SIZE - 2 * ITEM_PADDING, ITEM_SIZE - 2 * ITEM_PADDING, currentItemColor);
 }

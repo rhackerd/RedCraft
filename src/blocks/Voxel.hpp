@@ -54,6 +54,17 @@ virtual void Draw() const {
     }
 
 }
+
+    virtual Texture2D getTexture() {
+        return texture;
+    }
+
+    virtual std::pair<int, int> getPosition() {
+        int realx = (x * blockSize) + offsetX;
+        int realy = (y * blockSize) + offsetY;
+        return std::make_pair(realx, realy);
+    }
+
     virtual void onTextureLoaded() {
         // Base class can have a default implementation, if necessary
     }

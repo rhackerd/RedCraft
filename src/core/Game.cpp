@@ -171,15 +171,20 @@ void Game::handleGameState() {
                 int x = 0;
                 int y = 0;
                 std::pair<int, std::vector<int>> cell = get_cell(sock, x, y);
+                std::vector<std::pair<int, std::pair<int, int>>> chunk;
                 for (int i = 0; i < 16; i++) {
                     for (int j = 0; j < 16; j++) {
                         // Ensure that cell.second is a std::vector<int>
                         int blockId = cell.second[i * 16 + j]; // Get the block ID from the vector
-                        voxelium.setBlock(i, j, blockId-1); // Call setBlock with the block ID
+                        int x = i;
+                        int y = j;
+                        int block_id = blockId-1;
+                        chunk.push_back(std::make_pair(block_id, std::make_pair(x, y)));
+                        //voxelium.setBlock(x, y, block_id);
                     }
-                }
-
-
+                }          // int block_id, int x, int y
+                              // \/
+                voxelium.setChunk(chunk);
             }
             discord.changeState("Connecting to server");
             break;
@@ -194,6 +199,7 @@ void Game::handleGameState() {
             voxelium.update();
             discord.changeState("In game");
             inventory.update();
+            
             chat.Update();
             break;
 

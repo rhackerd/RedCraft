@@ -18,8 +18,11 @@ public:
     void update();
     Item getSelectedItem();
     void setItem(Item item, int pos);
+    void DrawInventory();
     
 private:
+    void DrawItem(Item item, int pos);
+
     int invSize;
     int selected;
     std::vector<std::pair<Item, std::pair<int, int>>> items;

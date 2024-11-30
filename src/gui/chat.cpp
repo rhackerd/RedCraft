@@ -105,6 +105,7 @@ void Chat::command(std::string command, std::vector<std::string> args = {}) {
         this->messages.clear();
     }else if(command == "leave") {
         send("leaving...");
+        exit(0);
     }else {
         char buffer[256];
         std::sprintf(buffer, "command not found: %s", command.c_str());

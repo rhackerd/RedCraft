@@ -45,9 +45,18 @@ void Button::draw() {
 
     DrawRectangleRounded(Rectangle{this->position.x, this->position.y, this->size.x, this->size.y}, 0.2f, 10, currentColor);
     
-    const float borderThickness = 2.0f; // Adjust border thickness here
-    DrawRectangleRoundedLines(Rectangle{this->position.x + borderThickness / 2, this->position.y + borderThickness / 2, 
-                                         this->size.x - borderThickness, this->size.y - borderThickness}, 0.2f, 10, borderThickness, {0, 0, 0, 128});
+    const float borderThickness = 2.0f;
+    DrawRectangleRounded(
+        Rectangle{
+            this->position.x,
+            this->position.y,
+            this->size.x - borderThickness,
+            this->size.y - borderThickness
+        },
+        0.2f,
+        10,
+        BLACK
+    );
     
     int textWidth = MeasureText(this->text.c_str(), 20);
     int textX = this->position.x + (this->size.x - textWidth) / 2;
