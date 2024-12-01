@@ -55,7 +55,7 @@ void Button::draw() {
         },
         0.2f,
         10,
-        BLACK
+        RAYWHITE
     );
     
     int textWidth = MeasureText(this->text.c_str(), 20);
