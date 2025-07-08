@@ -50,7 +50,3 @@ After building, run the executable (inside the `build` folder):
 ## 👤 Author
 
 * [rhackerd](https://github.com/rhackerd)
-
----
-
-Let me know if you want to add build instructions for Windows/MSVC, or package manager instructions for raylib (like `pacman -S raylib` or `vcpkg`).
